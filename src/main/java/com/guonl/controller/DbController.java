@@ -34,6 +34,7 @@ public class DbController {
     }
 
 
+    @SuppressWarnings("all")
     @GetMapping("/column/adjust")
     public ResponseEntity columnAdjust(String tablename) {
         List<String> list = Arrays.asList(tablename);
@@ -79,26 +80,27 @@ public class DbController {
                 jdbcTemplate.update(alterSql);
             }
             // 2、检查表字段注释
-            checkTableColumn(tableName);
+            checkTableColumn(tableName,schemaName);
 
         });
 
         return ResponseEntity.ok(result);
     }
 
-    private void checkTableColumn(String tableName) {
-        List<String> list = Arrays.asList(tableName);
-        String sql = "select column_name,data_type,column_comment,is_nullable,column_type FROM INFORMATION_SCHEMA.Columns WHERE table_name=?";
+    @SuppressWarnings("all")
+    private void checkTableColumn(String tableName,String schemaName) {
+        List<String> list = Arrays.asList(tableName,schemaName);
+        String sql = "select column_name,data_type,column_comment,is_nullable,column_type FROM INFORMATION_SCHEMA.Columns WHERE table_name=? AND table_schema=?";
         log.info("执行前的sql为：{}", sql);
-        List<Map<String, Object>> result = jdbcTemplate.queryForList(sql, list.toArray());
-        result.forEach(map -> {
+        List<Map<String, Object>> mapList = jdbcTemplate.queryForList(sql, list.toArray());
+        mapList.forEach(map -> {
             String columnName = (String) map.get("COLUMN_NAME");
             String dataType = (String) map.get("DATA_TYPE");
             String comment = (String) map.get("COLUMN_COMMENT");
             String isNullable = (String) map.get("IS_NULLABLE");
             String columnType = (String) map.get("COLUMN_TYPE");
             //1、解决字段注释为空
-            if (StringUtils.isBlank(comment)) {
+            if (StringUtils.isBlank(comment) && !"timestamp".equals(dataType.toLowerCase())) {
                 StringBuilder builder = new StringBuilder("alter table ");
                 builder.append(tableName + " modify column ").append(columnName + " " + columnType).append(" comment " + "'注释：" + columnName + "'");
                 log.info("添加字段注释--->>>>>>>执行前的sql为：{}", builder.toString());
@@ -106,6 +108,39 @@ public class DbController {
             }
             //2、解决默认值为空
             if("YES".equals(isNullable)){
+                StringBuilder builder = new StringBuilder("alter table ");
+                builder.append(tableName + " modify column ").append(columnName + " " + columnType).append(" not null ");
+                if(dataType.toLowerCase().contains("int")){
+                    builder.append("default '0'");
+                }
+                //时间类型不处理
+                if("date".equals(dataType.toLowerCase())){
+
+                }
+                if("time".equals(dataType.toLowerCase())){
+
+                }
+                if("timestamp".equals(dataType.toLowerCase()) || "datetime".equals(dataType.toLowerCase())){
+
+                }
+
+                if("double".equals(dataType.toLowerCase()) || "float".equals(dataType.toLowerCase())){
+
+                }
+
+                if(dataType.toLowerCase().contains("text")){
+                    builder.append("default ''");
+                }
+                if("decimal".equals(dataType.toLowerCase())){
+                    builder.append("default '0.0'");
+                }
+                String defaultSql = builder.toString();
+                if(defaultSql.contains("default")){
+                    log.info("添加默认值--->>>>>>>执行前的sql为：{}", builder.toString());
+                    jdbcTemplate.update(builder.toString());
+                }
+
+
 //                alter table employee modify name varchar(255) default '' not null;
 //                alter table employee modify age int default '0' not null;
 
@@ -115,9 +150,11 @@ public class DbController {
 
         });
         //3、检查是否缺少字段
-        List<String> columnNameList = result.stream().map(x -> (String) x.get("COLUMN_NAME")).collect(Collectors.toList());
+        List<String> columnNameList = mapList.stream().map(x -> (String) x.get("COLUMN_NAME")).collect(Collectors.toList());
         if(!columnNameList.contains("sys_create_time")){
             String addColumnSql = "alter table " + tableName + " add sys_create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'";
+            log.info("添加系统字段--->>>>>>>执行前的sql为：{}", addColumnSql);
+            jdbcTemplate.update(addColumnSql);
         }
 
     }
