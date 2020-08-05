@@ -87,6 +87,15 @@ public class DbController {
         return ResponseEntity.ok(result);
     }
 
+    /**
+     * alter table employee modify column salary2 decimal(4,3) not null ;
+     * alter table employee modify column salary2 decimal(4,3) default '0.0';
+     * 如果字段没有设置非空，更新默认值，会失败 Error : Invalid use of NULL value
+     *
+     *
+     * @param tableName
+     * @param schemaName
+     */
     @SuppressWarnings("all")
     private void checkTableColumn(String tableName,String schemaName) {
         List<String> list = Arrays.asList(tableName,schemaName);
