@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -22,47 +21,27 @@ public class DbController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    @GetMapping("/getTableInfo")
-    public ResponseEntity getTableInfo() {
-        List<String> list = Arrays.asList("employee", "guonl");
-        String sql = "select column_name,data_type,column_comment,is_nullable FROM INFORMATION_SCHEMA.Columns WHERE table_name=? AND table_schema=?";
-        log.info("执行前的sql为：{}", sql);
-        List<Map<String, Object>> maps = jdbcTemplate.queryForList(sql, list.toArray());
-        return ResponseEntity.ok(maps);
-    }
 
-
-    @SuppressWarnings("all")
+    /**
+     * 单表规则修复
+     *
+     * @param tablename
+     * @param schemaName
+     * @return
+     */
     @GetMapping("/column/adjust")
-    public ResponseEntity columnAdjust(String tablename) {
-        List<String> list = Arrays.asList(tablename);
-        String sql = "select column_name,data_type,column_comment,is_nullable,column_type FROM INFORMATION_SCHEMA.Columns WHERE table_name=?";
-        log.info("执行前的sql为：{}", sql);
-        List<Map<String, Object>> result = jdbcTemplate.queryForList(sql, list.toArray());
-        result.forEach(map -> {
-            String columnName = (String) map.get("COLUMN_NAME");
-            String dataType = (String) map.get("DATA_TYPE");
-            String comment = (String) map.get("COLUMN_COMMENT");
-            String isNullable = (String) map.get("IS_NULLABLE");
-            String columnType = (String) map.get("COLUMN_TYPE");
-            //解决字段注释为空
-            if (StringUtils.isBlank(comment)) {
-                StringBuilder builder = new StringBuilder("alter table ");
-                builder.append(tablename + " modify column ").append(columnName + " " + columnType).append(" comment " + "'注释：" + columnName + "'");
-                log.info("添加字段注释--->>>>>>>执行前的sql为：{}", builder.toString());
-                jdbcTemplate.update(builder.toString());
-            }
-            //解决默认值为空
-            if ("YES".equals(isNullable)) {
-
-            }
-            //
-
-        });
-        return ResponseEntity.ok(result);
+    public ResponseEntity columnAdjust(String tablename, String schemaName) {
+        checkTableColumn(tablename, schemaName);
+        return ResponseEntity.ok("操作成功！");
     }
 
 
+    /**
+     * 全库修复
+     *
+     * @param schemaName
+     * @return
+     */
     @GetMapping("/schema/adjust")
     public ResponseEntity schemaAdjust(String schemaName) {
         List list = Arrays.asList(schemaName);
@@ -79,14 +58,11 @@ public class DbController {
             }
             // 2、检查表字段
             checkTableColumn(tableName, schemaName);
-
         });
-
         return ResponseEntity.ok(result);
     }
 
 
-    @SuppressWarnings("all")
     private void checkTableColumn(String tableName, String schemaName) {
         List<String> list = Arrays.asList(tableName, schemaName);
         String sql = "select column_name,data_type,column_comment,is_nullable,column_type,column_default,column_key,extra" +
@@ -111,7 +87,7 @@ public class DbController {
                 jdbcTemplate.update(builder.toString());
             }
             //2、解决默认值为空,需要跳过主键自增类型
-//            alter table employee alter column double_test set default '0';
+            // alter table employee alter column double_test set default '0';
             if (columnDefault == null && !("PRI".equals(columnKey) && "auto_increment".equals(extra))) {
                 StringBuilder builder = new StringBuilder("alter table ");
                 builder.append(tableName + " alter column ").append(columnName).append(" set default ");

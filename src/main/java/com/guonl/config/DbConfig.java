@@ -9,15 +9,11 @@ import javax.sql.DataSource;
 @Configuration
 public class DbConfig {
 
-//    @Autowired
-//    private DataSource dataSource;
-
     @Bean
     public JdbcTemplate getJdbcTemplate(DataSource dataSource) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource);
         return jdbcTemplate;
     }
-
 
 }
