@@ -29,7 +29,7 @@ public class DbController {
      * @param schemaName
      * @return
      */
-    @GetMapping("/column/adjust")
+    @GetMapping("/table/repair")
     public ResponseEntity columnAdjust(String tablename, String schemaName) {
         checkTableColumn(tablename, schemaName);
         return ResponseEntity.ok("操作成功！");
@@ -42,7 +42,7 @@ public class DbController {
      * @param schemaName
      * @return
      */
-    @GetMapping("/schema/adjust")
+    @GetMapping("/schema/repair")
     public ResponseEntity schemaAdjust(String schemaName) {
         List list = Arrays.asList(schemaName);
         String sql = "SELECT TABLE_NAME,TABLE_COMMENT FROM information_schema.TABLES WHERE table_schema=?";
