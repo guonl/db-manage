@@ -112,7 +112,7 @@ public class DbController {
             }
             //2、解决默认值为空,需要跳过主键自增类型
 //            alter table employee alter column double_test set default '0';
-            if (StringUtils.isBlank(columnDefault) && !("PRI".equals(columnKey) && "auto_increment".equals(extra))) {
+            if (columnDefault == null && !("PRI".equals(columnKey) && "auto_increment".equals(extra))) {
                 StringBuilder builder = new StringBuilder("alter table ");
                 builder.append(tableName + " alter column ").append(columnName).append(" set default ");
                 if (dataType.contains("int")) {
