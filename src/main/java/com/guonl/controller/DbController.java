@@ -8,9 +8,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -95,20 +95,24 @@ public class DbController {
                     builder.append("'0'");
                 }
                 if ("date".equals(dataType)) {
-                    builder.append("'0000-00-00'");
+                    builder.append("'1970-01-01'");
                 }
                 if ("time".equals(dataType)) {
                     builder.append("'00:00:00'");
                 }
                 if ("timestamp".equals(dataType) || "datetime".equals(dataType)) {
-                    builder.append("'0000-00-00 00:00:00'");
+                    builder.append("'1970-01-01 00:00:00'");
                 }
                 if ("double".equals(dataType) || "float".equals(dataType) || "decimal".equals(dataType)) {
                     builder.append("'0'");
                 }
-                if (dataType.contains("text")) {
+                if (dataType.contains("text") && !dataType.equals("text")) {
                     builder.append("''");
                 }
+                // BLOB, TEXT, GEOMETRY or JSON  在严格模式下，这几种格式无法赋默认值
+//                if("blob".equals(dataType) || "geometry".equals(dataType) || "json".equals(dataType)){
+//
+//                }
                 if (dataType.contains("char")) {
                     builder.append("''");
                 }
@@ -141,6 +145,14 @@ public class DbController {
             jdbcTemplate.update(addColumnSql);
         }
 
+    }
+
+    public static void main(String[] args) {
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        Long timestamp = 0L;
+        Date date = new Date(timestamp);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(format.format(date));
     }
 
 
