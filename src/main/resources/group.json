@@ -1,0 +1,502 @@
+[
+  {
+    "cnName": "客户信息公开程度",
+    "enName": "Customer information disclosure"
+  },
+  {
+    "cnName": "建立渠道",
+    "enName": "Channel of Establishment"
+  },
+  {
+    "cnName": "证件有效性",
+    "enName": "Validity of documents"
+  },
+  {
+    "cnName": "股权或控制权结构",
+    "enName": "Ownership or control structure"
+  },
+  {
+    "cnName": "涉及风险提示或负面报导",
+    "enName": "Involving risk warnings or negative reports"
+  },
+  {
+    "cnName": "注册地与实际经营地址是否一致",
+    "enName": "Comparison of registration place and actual business address"
+  },
+  {
+    "cnName": "所处国家和地区",
+    "enName": "Country and the region of residence"
+  },
+  {
+    "cnName": "客户行业或职业",
+    "enName": "Client's industry or occupation"
+  },
+  {
+    "cnName": "与特定洗钱风险的关联度",
+    "enName": "Association with money laundering risk"
+  },
+  {
+    "cnName": "非面对面交易",
+    "enName": "Non-face to face transaction"
+  },
+  {
+    "cnName": "大额可疑交易监测记录",
+    "enName": "Monitoring records of large suspicious transactions"
+  },
+  {
+    "cnName": "频繁充提异常",
+    "enName": "Abnormal frequent deposit and withdrawal"
+  },
+  {
+    "cnName": "充值行为监测",
+    "enName": "Deposit behavior monitoring"
+  },
+  {
+    "cnName": "提现行为监测",
+    "enName": "Cash withdrawal behavior monitoring"
+  },
+  {
+    "cnName": "公司制企业法人等",
+    "enName": "Corporate entity, legal person, etc"
+  },
+  {
+    "cnName": "信托",
+    "enName": "Trust"
+  },
+  {
+    "cnName": "合伙企业、社团法人等",
+    "enName": "Partnerships, Corporate entity, legal person, etc"
+  },
+  {
+    "cnName": "境外机构等",
+    "enName": "Overseas institutions, etc."
+  },
+  {
+    "cnName": "其他难以评估类",
+    "enName": "Other types which are difficult to evaluate"
+  },
+  {
+    "cnName": "WEB端建立账户",
+    "enName": "Create an account on the WEB side"
+  },
+  {
+    "cnName": "证件有效期内A",
+    "enName": "The document is within the validity period A"
+  },
+  {
+    "cnName": "证件有效期内B",
+    "enName": "The document is within the validity period B"
+  },
+  {
+    "cnName": "股权结构简单的企业",
+    "enName": "An enterprise with a simple ownership structure"
+  },
+  {
+    "cnName": "全民集体所有制企业等结构清晰的企业",
+    "enName": "Enterprises with a clear structure such as collectively owned enterprises"
+  },
+  {
+    "cnName": "公司制企业等结构相对清晰的企业",
+    "enName": "Enterprises with relatively clear structure such as corporate system"
+  },
+  {
+    "cnName": "其他风险较高股权或控制权结构",
+    "enName": "Other higher risk equity or control structure"
+  },
+  {
+    "cnName": "空壳公司和不记名股份公司",
+    "enName": "Shell companies or anonymous corporations"
+  },
+  {
+    "cnName": "未涉及风险提示或负面报导",
+    "enName": "No risk warnings or negative reports were involved"
+  },
+  {
+    "cnName": "交易所等协查1次",
+    "enName": "Co-check by exchanges and/or others 1 time"
+  },
+  {
+    "cnName": "交易所等协查2次",
+    "enName": "Co-check by exchanges and/or others check 2 times"
+  },
+  {
+    "cnName": "司法冻结等",
+    "enName": "sanctioned/CFT/Judicially frozen"
+  },
+  {
+    "cnName": "可能涉及违法洗钱犯罪或负面报导",
+    "enName": "Involved with money laundering or negative publicity"
+  },
+  {
+    "cnName": "涉嫌洗钱犯罪调查或重要负面报导",
+    "enName": "Money laundering investigation or important negative reporting"
+  },
+  {
+    "cnName": "注册地与实际经营地一致",
+    "enName": "The registration place is consistent with the actual place of business"
+  },
+  {
+    "cnName": "注册地与实际经营地不一致",
+    "enName": "The place of registration is inconsistent with the place of actual business"
+  },
+  {
+    "cnName": "香港内",
+    "enName": " In Hong Kong"
+  },
+  {
+    "cnName": "香港外",
+    "enName": "Outside Hong Kong"
+  },
+  {
+    "cnName": "特殊金融监管风险",
+    "enName": "Countries with special financial regulatory risks indicated"
+  },
+  {
+    "cnName": "受监管制裁的国家或地区",
+    "enName": "Countries or regions subject to regulatory sanctions"
+  },
+  {
+    "cnName": "风险提示国家或地区",
+    "enName": "Country or region with risk warning"
+  },
+  {
+    "cnName": "一般职业或行业",
+    "enName": "A general occupation or trade"
+  },
+  {
+    "cnName": "资产与行业或注册资金不符",
+    "enName": "The assets do not match the industry or registered capital"
+  },
+  {
+    "cnName": "交易公司（商品）",
+    "enName": "Trading company (commodity)"
+  },
+  {
+    "cnName": "外汇交易所平台",
+    "enName": "Foreign exchange platform"
+  },
+  {
+    "cnName": "自营交易公司（加密货币）",
+    "enName": "Proprietary trading Company (Cryptocurrency)"
+  },
+  {
+    "cnName": "加密货币矿场/加密货币交易所平台",
+    "enName": "Cryptocurrency mines/cryptocurrency exchange platforms"
+  },
+  {
+    "cnName": "交易公司（矿物）",
+    "enName": "Trading Company (Minerals)"
+  },
+  {
+    "cnName": "电竞/博彩/娱乐行业",
+    "enName": "Esports/gaming/entertainment industry"
+  },
+  {
+    "cnName": "较高风险的职业或行业",
+    "enName": "A higher risk occupation or industry"
+  },
+  {
+    "cnName": "外国政要",
+    "enName": "Foreign PEP"
+  },
+  {
+    "cnName": "监控名单",
+    "enName": "Monitored list"
+  },
+  {
+    "cnName": "其他正常客户",
+    "enName": "Other normal customers"
+  },
+  {
+    "cnName": "大金额网上交易",
+    "enName": "High volume transactions"
+  },
+  {
+    "cnName": "同一IP和MAC地址",
+    "enName": "Same IP and MAC address"
+  },
+  {
+    "cnName": "不涉及大额可疑交易预警",
+    "enName": " Not involved in large suspicious transactions"
+  },
+  {
+    "cnName": "涉及大额交易",
+    "enName": "Involving large transactions"
+  },
+  {
+    "cnName": "涉及可疑交易预警",
+    "enName": " Suspicious transactions alerts"
+  },
+  {
+    "cnName": "一般可疑交易",
+    "enName": "General suspicious transactions"
+  },
+  {
+    "cnName": "重点可疑交易",
+    "enName": "Major suspicious transactions"
+  },
+  {
+    "cnName": "未见频繁充提",
+    "enName": "No frequent deposit and withdrawal"
+  },
+  {
+    "cnName": "频繁资金转账（5-10倍）",
+    "enName": "Frequent fund transfers (5-10 times)"
+  },
+  {
+    "cnName": "频繁资金转账>=10倍",
+    "enName": "Frequent capital transfers >=10 times"
+  },
+  {
+    "cnName": "大额转账",
+    "enName": "Large amount of money transfer"
+  },
+  {
+    "cnName": "频繁大额转账",
+    "enName": "Frequently large amount of money transfer"
+  },
+  {
+    "cnName": "其他资金交易行为异常",
+    "enName": "Other abnormal money trading activities"
+  },
+  {
+    "cnName": "可疑地址充值次数（地址可疑通过elliptic判断）",
+    "enName": "Number of suspicious addresses filled (identified by elliptic)"
+  },
+  {
+    "cnName": "提现拒绝次数（地址可疑通过elliptic判断）",
+    "enName": "Number of withdrawals rejected (address suspected by Elliptic)"
+  },
+  {
+    "cnName": "香港内公司制企业法人（包括：股份有限公司、有限责任公司）",
+    "enName": "Corporate legal person in Hong Kong (including joint stock limited company and limited liability company)"
+  },
+  {
+    "cnName": "信托",
+    "enName": "Trust"
+  },
+  {
+    "cnName": "合伙企业、社团",
+    "enName": "Partnerships, societies"
+  },
+  {
+    "cnName": "境外机构",
+    "enName": "Overseas institutions, etc."
+  },
+  {
+    "cnName": "信息公开程度难以评估的其他机构客户",
+    "enName": "Other institutional clients which are difficult to evaluate, given their degree of information disclosure"
+  },
+  {
+    "cnName": "在官网注册的账户",
+    "enName": "An account registered on the official website"
+  },
+  {
+    "cnName": "证件有效期内（有效期大于等于3个月）",
+    "enName": "The documentation is within the validity period (valid for 3 months or more)"
+  },
+  {
+    "cnName": "证件有效期内（有效期小于3个月）",
+    "enName": "The documentation is within the validity period(Valid for less than 3 months)"
+  },
+  {
+    "cnName": "全民所有制、集体所有制（包括国有企业、事业法人、机关法人）等股权或控制权简单清晰的企业",
+    "enName": "Enterprises with simple and clear equity or control rights such as national ownership, collective ownership (including state-owned enterprises, institutional legal persons, and agency legal persons)"
+  },
+  {
+    "cnName": "公司制法人企业等股权或控制权结构相对简单清晰的企业",
+    "enName": "Corporate legal person enterprises such as equity or control structure is relatively simple and clear"
+  },
+  {
+    "cnName": "其他风险较高股权或控制权结构（如境外代理人、境外一般机构等）",
+    "enName": "Other high-risk equity or control structures (such as overseas agents, overseas institutions, etc.)"
+  },
+  {
+    "cnName": "未涉及风险提示或负面报导",
+    "enName": "No risk warnings or negative reports were involved"
+  },
+  {
+    "cnName": "3年内交易所等机构协查1次，可能涉及洗钱的账户",
+    "enName": "Within 3 years, the exchange and other institutions cooperate to investigate once, possibly involving money laundering accounts"
+  },
+  {
+    "cnName": "3年内交易所等机构协查2次（及2次以上），可能涉及洗钱的账户",
+    "enName": "In 3 years, the exchange and other institutions cooperate to investigate 2 times (or more), possibly involving money laundering accounts"
+  },
+  {
+    "cnName": "司法冻结账户以及其他可能涉及洗钱的风险提示或处置情形",
+    "enName": "Judicial freezing of accounts and other risk representations or disposition that may involve money laundering"
+  },
+  {
+    "cnName": "7年内被有关部门因可能涉嫌洗钱犯罪等进行提示予以关注，或涉及负面新闻报导评论的。",
+    "enName": "Within 7 years, he/she was prompted to pay attention by relevant departments due to possible suspicion of money laundering crimes, or was involved in negative news reports and comments."
+  },
+  {
+    "cnName": "7年内被有关部门涉嫌洗钱犯罪调查、通报或涉及严重负面新闻报导等",
+    "enName": "Within 7 years, he was investigated, reported or involved in serious negative news reports by relevant departments on the crime of money laundering"
+  },
+  {
+    "cnName": "香港内",
+    "enName": "In Hong Kong"
+  },
+  {
+    "cnName": "香港外",
+    "enName": "Outside Hong Kong"
+  },
+  {
+    "cnName": "离岸金融中心",
+    "enName": "Offshore financial center"
+  },
+  {
+    "cnName": "受反洗钱监管或制裁的国家或地区",
+    "enName": "Countries or regions subject to anti-money laundering regulations or sanctions"
+  },
+  {
+    "cnName": "FATF、APG、EAG反洗钱风险提示国家或地区",
+    "enName": "FATF, APG, EAG anti-money laundering risk alert country or region"
+  },
+  {
+    "cnName": "机构：一般行业, ",
+    "enName": "Institution: General industry"
+  },
+  {
+    "cnName": "机构客户资产规模与其行业或注册资金不符（如客户资产/机构客户注册资本>10等）",
+    "enName": "Assets of institutional clients are not in line with their industry or registered capital (e.g., assets of clients/registered capital of institutional clients >10)"
+  },
+  {
+    "cnName": "交易公司（商品）",
+    "enName": "Trading company (commodity)"
+  },
+  {
+    "cnName": "外汇交易所平台",
+    "enName": "Foreign exchange platform"
+  },
+  {
+    "cnName": "自营交易公司（加密货币）",
+    "enName": "Proprietary trading Company (Cryptocurrency)"
+  },
+  {
+    "cnName": "加密货币矿场/加密货币交易所平台",
+    "enName": "Cryptocurrency mines/cryptocurrency exchange platforms"
+  },
+  {
+    "cnName": "交易公司（矿物）",
+    "enName": "Trading Company (Minerals)"
+  },
+  {
+    "cnName": "机构客户是电竞/博彩/娱乐行业",
+    "enName": "The institutional client is the esports/gaming/entertainment industry"
+  },
+  {
+    "cnName": "机构客户是未被监管的慈善团体或非盈利组织等，以及其他人工识别较高风险行业或职业的客户",
+    "enName": "Institutional clients are clients of unregulated charities or non-profit organizations, among others, and others that manually identify high-risk industries or occupations"
+  },
+  {
+    "cnName": "外国政要及其关系密切人",
+    "enName": "Foreign PEP, associates or their close contacts"
+  },
+  {
+    "cnName": "反洗钱或恐怖融资监控名单",
+    "enName": "Anti-money laundering or terrorist financing watch list"
+  },
+  {
+    "cnName": "正常非面对面交易客户",
+    "enName": "Normal non - face trading clients"
+  },
+  {
+    "cnName": "1个月内，虚拟货币日均交易额>USD1W ",
+    "enName": "In 1 month, the average daily turnover of virtual currency >USD10k"
+  },
+  {
+    "cnName": "1个月内，虚拟货币日均交易额>USD10W",
+    "enName": "In 1 month, the average daily turnover of virtual currency >USD100k"
+  },
+  {
+    "cnName": "1个月内，虚拟货币日均交易额>USD 50W",
+    "enName": "In 1 month, the average daily turnover of virtual currency >USD500k"
+  },
+  {
+    "cnName": "1个月内，虚拟货币日均交易额>USD100W",
+    "enName": "In 1 month, the average daily turnover of virtual currency was >USD1m"
+  },
+  {
+    "cnName": "3个月内同一IP和MAC地址发生5个（及以上）网上交易",
+    "enName": "More than 5 times online transactions with the same IP and MAC address in 3 months"
+  },
+  {
+    "cnName": "一段时间内不涉及大额可疑交易预警",
+    "enName": "Not involving large suspicious transactions for a period of time"
+  },
+  {
+    "cnName": "1年内涉及大额交易报告，但未涉及可疑交易控制措施",
+    "enName": "Large transactions were reported within 1 year, but no suspicious transaction control measures were involved"
+  },
+  {
+    "cnName": "3年内涉及可疑交易控制措施，但未上报给监管可疑交易的",
+    "enName": "Involving suspicious transaction control measures within 3 years, but not reported to the supervision of suspicious transactions"
+  },
+  {
+    "cnName": "5年内涉及一般可疑交易报告",
+    "enName": "Report of general suspicious transactions within 5 years"
+  },
+  {
+    "cnName": "5年内涉及重点可疑交易报告",
+    "enName": "Report of major suspicious transactions within 5 years"
+  },
+  {
+    "cnName": "无频繁大额提现、资金存取及其他交易异常行为",
+    "enName": "No frequent large withdrawals, fund withdrawal and other abnormal trading behavior"
+  },
+  {
+    "cnName": "1个月内，客户资金存取总量/总交易量:5-10倍，且资金存取总量超过USD100万",
+    "enName": "Within one month, the total amount of client's funds deposit and withdrawal/total trading volume :5-10 times, and the total amount of funds deposit and withdrawal exceeds USD1 million"
+  },
+  {
+    "cnName": "1个月内，客户资金总存取量/总交易量>=10倍，且资金存取总量超过USD100万",
+    "enName": "Within one month, the total amount of customer funds access/total trading volume >=10 times, and the total amount of funds access exceeds usd1 million"
+  },
+  {
+    "cnName": "客户单次提现市值超过USD50万",
+    "enName": "The customer's single withdrawal market value exceeds USD500,000"
+  },
+  {
+    "cnName": "1个月超过3次且每次金额超过USD50万",
+    "enName": "More than three times a month and the amount of each time is more than USD500,000"
+  },
+  {
+    "cnName": "人工识别其他资金交易行为存在一定异常，无合理原因的",
+    "enName": "Manually identifying other capital trading behaviors with certain abnormalities without reasonable justification"
+  },
+  {
+    "cnName": "3个月内，充值来源为可疑地址1次",
+    "enName": "In the past 3 months, suspicious deposit 1 time"
+  },
+  {
+    "cnName": "3个月内，充值来源为可疑地址2次",
+    "enName": "In the past 3 months, suspicious deposit 2 times"
+  },
+  {
+    "cnName": "3个月内，充值来源为可疑地址3次",
+    "enName": "In the past 3 months, suspicious deposit 3 times"
+  },
+  {
+    "cnName": "3个月内，充值来源为可疑地址4次",
+    "enName": "In the past 3 months, suspicious deposit 4 times"
+  },
+  {
+    "cnName": "3个月内，提现被拒绝1次",
+    "enName": "In the past 3 months，suspicious withdrawal 1 time."
+  },
+  {
+    "cnName": "3个月内，提现被拒绝2次",
+    "enName": "In the past 3 months，suspicious withdrawal 2 times."
+  },
+  {
+    "cnName": "3个月内，提现被拒绝3次",
+    "enName": "In the past 3 months，suspicious withdrawal 3 times."
+  },
+  {
+    "cnName": "3个月内，提现被拒绝4次",
+    "enName": "In the past 3 months，suspicious withdrawal 4 times."
+  }
+]
